@@ -49,6 +49,33 @@ public class Agenda{
 
     public Agenda() {
     }
+    
+    public boolean insertar(Contacto contacto){
+        boolean resultado=true;
+        for(Contacto c : contactos){
+            if(contacto.equals(c)){
+                resultado=false;
+            }else{
+                contactos.add(contacto);
+            }
+        }
+        
+        return resultado;
+    }
+    
+    public boolean eliminar(Contacto contacto){
+        boolean resultado=true;
+        for(Contacto c : contactos){
+            if(contacto.equals(c)){
+                contactos.remove(contacto);
+            }else{
+                resultado=false;
+            }
+        }
+        
+        return resultado;
+    
+    }
 
     
     

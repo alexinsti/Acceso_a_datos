@@ -34,8 +34,18 @@ public class Ejercicio1 {
         agenda.generaContacto();
         
         Contacto contacto= agenda.getContacto();
+        Contacto contacto2= agenda.getContacto();
         
         System.out.println(contacto.toString());
+        
+        agenda.insertar(contacto);
+        agenda.insertar(contacto2);
+        
+        for(Contacto c : agenda.contactos){
+            System.out.println("hola");
+        }
+        
+        agenda.listar(1, 2);
         
         
        

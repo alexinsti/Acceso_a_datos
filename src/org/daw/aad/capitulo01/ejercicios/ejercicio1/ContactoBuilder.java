@@ -31,7 +31,7 @@ public abstract class ContactoBuilder {
         double n=Math.random();
         if(n<0.3)contacto.setSexo(Contacto.Sexo.HOMBRE);
         else if(n>0.6)contacto.setSexo(Contacto.Sexo.MUJER);
-        else contacto.setSexo(Contacto.Sexo.NOSLECCIONADO);
+        else contacto.setSexo(Contacto.Sexo.NOSLECCIONADO);     
     }
     
     public void buildFechaNacimiento(){
@@ -39,20 +39,28 @@ public abstract class ContactoBuilder {
     }
     
     public void buildLatitud(){
-        contacto.setLatitud((Math.random()*180)-90);
+        double latitudDouble=((Math.random()*180)-90);
+        double latitudAcotada= ((double)((int)(latitudDouble*100))/100);
+        contacto.setLatitud(latitudAcotada);
+        
     }
     
     public void buildLongitud(){
-        contacto.setLongitud((Math.random()*360)-180);
+        double longitudDouble=((Math.random()*360)-180);
+        double longitudAcotada= ((double)((int)(longitudDouble*100))/100);
+        contacto.setLongitud(longitudAcotada);
+       
     }
     
     public void buildDestacado(){
         if(Math.random()<0.5) contacto.setDestacado(true);
         else contacto.setDestacado(false);
+        
     }
     
     public void buildNivel(){
         contacto.setNivel((int)((Math.random()*10)+1));
+        
     }
     
     
@@ -235,6 +243,7 @@ public abstract class ContactoBuilder {
     public void buildTelefono(){
         int numero=(int) (Math.random()*1000000000);
         contacto.setTelefono(Integer.toString(numero)); 
+        
     }
     
     public abstract void buildGrupo();

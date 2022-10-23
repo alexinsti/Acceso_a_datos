@@ -12,7 +12,7 @@ public class TrabajoContactoBuilder extends ContactoBuilder{
 
     @Override
     public void buildGrupo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        contacto.setGrupo(Contacto.Grupo.TRABAJO);
     }
     
 }

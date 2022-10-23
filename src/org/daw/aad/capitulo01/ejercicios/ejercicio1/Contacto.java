@@ -21,7 +21,7 @@ public class Contacto implements Comparable<Contacto>, Serializable{
     Contacto() {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
     @Override
     public int compareTo(Contacto o) {
         int resultado=-1;
@@ -30,10 +30,10 @@ public class Contacto implements Comparable<Contacto>, Serializable{
         }
         return resultado;
     }
-    public enum Grupo{FAMILIARES, AMIGOS, TRABAJO, EMERGENCIA, OTROS}
+    public static enum Grupo implements Serializable{FAMILIARES, AMIGOS, TRABAJO, EMERGENCIA, OTROS}
     private Grupo grupo;
     private LocalDate fechaNacimiento;
-    public enum Sexo{HOMBRE, MUJER, NOSLECCIONADO};
+    public static enum Sexo implements Serializable{HOMBRE, MUJER, NOSLECCIONADO};
     private Sexo sexo;
     private double latitud;
     private double longitud;
@@ -126,7 +126,7 @@ public class Contacto implements Comparable<Contacto>, Serializable{
         this.longitud = longitud;
     }
 
-    public boolean isDestacado() {
+    public boolean getDestacado() {
         return destacado;
     }
 
@@ -152,16 +152,16 @@ public class Contacto implements Comparable<Contacto>, Serializable{
     public String toString(){
         String resultado="";
         
-        resultado+=nombre+"\n";
-        resultado+=apellido1+"\n";
-        resultado+=apellido2+"\n";
-        resultado+=telefono+"\n";
-        resultado+=grupo.toString()+"\n";
-        resultado+=fechaNacimiento.toString()+"\n";
-        resultado+=sexo.toString()+"\n";
-        resultado+=Double.toString(latitud)+"\n";
-        resultado+=Double.toString(longitud)+"\n";
-        resultado+=Boolean.toString(destacado)+"\n";
+        resultado+=nombre+";";
+        resultado+=apellido1+";";
+        resultado+=apellido2+";";
+        resultado+=telefono+";";
+        resultado+=grupo.toString()+";";
+        resultado+=fechaNacimiento.toString()+";";
+        resultado+=sexo.toString()+";";
+        resultado+=Double.toString(latitud)+";";
+        resultado+=Double.toString(longitud)+";";
+        resultado+=Boolean.toString(destacado)+";";
         resultado+=Integer.toString(nivel)+"\n";
         
         return resultado;
